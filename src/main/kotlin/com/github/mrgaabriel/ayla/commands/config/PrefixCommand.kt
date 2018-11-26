@@ -11,7 +11,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 class PrefixCommand : AbstractCommand("prefix") {
 
     override fun getDescription(): String {
-        return "Mude o prefixo dos comandos do servidor"
+        return "Altere o prefixo dos comandos do seu servidor para"
     }
 
     override fun getMemberPermissions(): List<Permission> {
@@ -34,6 +34,6 @@ class PrefixCommand : AbstractCommand("prefix") {
             config.prefix = prefix
         }
 
-        context.sendMessage("${context.event.author.asMention} O prefixo dos comandos do servidor foi mudado para `$prefix`")
+        context.sendMessage("${context.event.author.asMention} O prefixo do servidor foi alterado para `$prefix`")
     }
 }
